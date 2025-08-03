@@ -5,4 +5,10 @@
  $ipList   = @file_get_contents('blockips.raw');
  if($ipList === false)                              { return; }
  if(strpos($ipList, $packedIp) !== false)           { exit;   }
+ $pos = strpos($ipList, $packedIp);
+ while($pos !== false) {
+  if($pos % 4 === 0)                                { exit;   }
+   $pos = strpos($ipList, $packedIp, $pos + 1);
+  }
+ }
 ?>
