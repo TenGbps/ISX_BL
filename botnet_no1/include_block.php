@@ -7,7 +7,6 @@
  $pos = strpos($ipList, $packedIp);
  while($pos !== false) {
   if($pos % 4 === 0)                                { exit;   }
-   $pos = strpos($ipList, $packedIp, $pos + 1);
-  }
+  $pos = strpos($ipList, $packedIp, $pos + 1);
  }
 ?>
